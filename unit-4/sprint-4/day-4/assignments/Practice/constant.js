@@ -1,1 +1,0 @@
-export const BASE_URL = "https://68347fde464b499636031a7d.mockapi.io/Todos"
