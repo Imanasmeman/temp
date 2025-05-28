@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shopping List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      input {
+        padding: 5px;
+        margin: 5px;
+      }
+      button {
+        margin: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      .item {
+        display: flex;
+        justify-content: space-between;
+        background-color: #f2f2f2;
+        padding: 10px;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      const { useState } = React;
+
+      function App() {
+        const [items, setItems] = useState([]);
+        const [name, setName] = useState("");
+        const [quantity, setQuantity] = useState("");
+
+        const handleAdd = () => {
+          if (name.trim() === "" || quantity < 1) {
+            alert("Please enter a valid item and quantity.");
+            return;
+          }
+
+          setItems([...items, { name, quantity }]);
+          setName("");
+          setQuantity("");
+        };
+
+        const handleRemove = (index) => {
+          const updated = items.filter((_, i) => i !== index);
+          setItems(updated);
+        };
+
+        const handleClearAll = () => {
+          setItems([]);
+        };
+
+        return (
+          <div>
+            <h1>Shopping List</h1>
+            <input
+              type="text"
+              placeholder="Item name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              type="number"
+              placeholder="Quantity"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+              min="1"
+            />
+            <button onClick={handleAdd}>Add Item</button>
+            <button onClick={handleClearAll}>Clear All</button>
+
+            <div>
+              {items.map((item, index) => (
+                <div className="item" key={index}>
+                  <span>{item.name} - {item.quantity}</span>
+                  <button onClick={() => handleRemove(index)}>Remove</button>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+  .container{
+    max-width: 400px;
+    margin: 2rem auto;
+    font-family: sans-serif;
+    text-align: center;
+  }
+  input {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    width: 70%;
+  }
+  button {
+padding: 0.5rem 1rem;
+margin: 0.5rem;
+background: lightcoral;
+width: 80px;
+
+  }
+
+  ul{
+    list-style: none;
+    margin: 0.5rem;
+  }
+
+  li {
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: lightblue;
+  }
+  li button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+  }

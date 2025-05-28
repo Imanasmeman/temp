@@ -1,0 +1,24 @@
+.posts-list{
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+input[type = "text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.post-card {
+    border: 1px solid #ddd;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.post-card:hover{
+    background-color: #ffdfdf;
+}

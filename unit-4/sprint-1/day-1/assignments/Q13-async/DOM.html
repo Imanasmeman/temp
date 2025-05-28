@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Title</title>
+    <style>
+        h1{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: red;
+            background-color: black;
+            text-align: center;
+        }
+        p{
+            color: green;
+            text-align: center;
+        }
+        button{
+            display: block;
+            margin: 20px auto; 
+            text-align: center;
+            width: 80x;
+            padding: 10px;
+           border-radius: 10px;
+           background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">DOM Title</h1>
+    <p id="count">Title Updates : 0</p>
+    <button id="Update-btn">Update Title</button>
+</body>
+<script>
+    let numberOfUpdate = 0;
+    const title = document.getElementById('title');
+    const count = document.getElementById('count');
+    const btn = document.getElementById('Update-btn');
+    btn.addEventListener('click', () => {
+          numberOfUpdate++;
+          title.textContent = `Title Updated ${numberOfUpdate}`;
+          count.textContent = `Title Updates : ${numberOfUpdate}`;
+          
+    })
+</script>
+</html>

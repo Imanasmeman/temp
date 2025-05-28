@@ -1,0 +1,20 @@
+body.light {
+  background: #fff;
+  color: #000;
+}
+
+body.dark {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+button {
+  margin: 5px;
+  padding: 6px 12px;
+}
+
+input {
+  padding: 6px;
+  margin-bottom: 10px;
+  display: block;
+}
